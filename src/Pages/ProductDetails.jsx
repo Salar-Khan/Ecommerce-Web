@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useCart } from "../CartContext/CartContext"; // To access the cart context
+import { useCart } from "../CartContext/CartContext";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import {IoCheckmarkSharp} from "react-icons/io5";
 const ProductDetail = () => {
-  const { id } = useParams(); // Get the product ID from the URL
+  const { id } = useParams(); 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [addedToCart, setAdded] = useState(null);
@@ -28,7 +28,7 @@ const ProductDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <div className="text-3xl text-center font-bold">Loading......</div>;
+    return <div className="text-3xl text-center font-bold">Loading.....</div>;
   }
   const addToCart = (product, productId) => {
     setAdded(productId);
