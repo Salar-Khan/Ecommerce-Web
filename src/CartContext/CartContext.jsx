@@ -8,7 +8,6 @@ export const CartProvider = ({children})=>{
         setCart((prevCart)=>[...prevCart , product])
     };
     const removeItem = (productId) => {
-        // Correct filtering logic
         setCart((prevCart) => prevCart.filter((product) => product.id !== productId));
       };
     const getTotalItems = () => {
