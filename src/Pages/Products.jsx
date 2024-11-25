@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCart } from "../CartContext/CartContext";
 import { IoCheckmarkSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const ProductCards = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,6 +36,7 @@ const ProductCards = () => {
     }, 3000);
   };
   return (
+  
     <section className="min-h-[80vh] w-11/12 mx-auto">
       <h1 className="text-2xl font-bold text-center m-5">Products</h1>
       <div className="p-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -73,6 +75,7 @@ const ProductCards = () => {
                     "Add to Cart"
                   )}
                 </button>
+                <Link to={`/${product.id}`} className="mt-3 block text-center text-blue-500">View Details</Link>
               </div>
             </div>
           );
